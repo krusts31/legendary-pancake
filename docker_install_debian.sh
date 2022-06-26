@@ -1,8 +1,9 @@
 #/bin/sh
 #src https://docs.docker.com/engine/install/debian/
-sudo apt-get remove docker docker-engine docker.io containerd runc #Uninstall old versions🔗
-sudo apt-get update # Set up the repository
-sudo apt-get install \
+sudo apt install git -y
+sudo apt-get remove docker docker-engine docker.io containerd runc -y #Uninstall old versions🔗
+sudo apt-get update -y # Set up the repository
+sudo apt-get install -y \
     ca-certificates \
     curl \
     gnupg \
@@ -15,4 +16,4 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
